@@ -1,0 +1,42 @@
+[
+    {
+      "id": "1",
+      "name": "Basic Membership",
+      "features": [
+        "Access to gym facilities",
+        "Use of cardio equipment",
+        "Locker room access",
+        "Fitness assessment",
+        "Discounts on gym merchandise",
+        "Access to online workout videos"
+      ],
+      "price": "$29.99/month"
+    },
+    {
+      "id": "2",
+      "name": "Premium Membership",
+      "features": [
+        "All Basic Membership features",
+        "Access to group fitness classes",
+        "Personal training session (1/month)",
+        "Sauna and steam room access",
+        "Towel service",
+        "Nutrition tips and recipes"
+      ],
+      "price": "$49.99/month"
+    },
+    {
+      "id": "3",
+      "name": "VIP Membership",
+      "features": [
+        "All Premium Membership features",
+        "Unlimited personal training sessions",
+        "Access to the swimming pool",
+        "Nutrition consultation (1/month)",
+        "Priority class booking",
+        "Exclusive VIP events"
+      ],
+      "price": "$79.99/month"
+    }
+  ]
+  
