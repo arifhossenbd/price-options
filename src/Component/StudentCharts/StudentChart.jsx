@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, AreaChart, Area, Tooltip, BarChart, Bar, Legend, PieChart, Pie, Cell } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, AreaChart, Area, Tooltip, BarChart, Bar, Legend} from 'recharts';
 
 const StudentChart = () => {
     const studentMarks = [
@@ -15,127 +15,83 @@ const StudentChart = () => {
         { id: 10, name: "Ethan Taylor", math: 87, science: 90, history: 88, english: 94 }
     ];
 
-    // const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+    return (
 
-    // const RADIAN = Math.PI / 180;
-    // const renderCustomizedLabel = ({
-    //     cx,
-    //     cy,
-    //     midAngle,
-    //     innerRadius,
-    //     outerRadius,
-    //     percent,
-    //     index
-    // }) => {
-    //     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    //     const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    //     const y = cy + radius * Math.sin(-midAngle * RADIAN);
+        <div className='mt-24'>
+            <h2 className='gap-5'>
+                Students Name: {studentMarks.name}
+            </h2>
+            <LineChart width={500} height={400} data={studentMarks}>
+                <Line type="monotone" dataKey="math" stroke="red" />
+                <Line type="monotone" dataKey="science" stroke="black" />
+                <Line type="monotone" dataKey="history" stroke="blue" />
+                <Line type="monotone" dataKey="english" stroke="aqa" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+            </LineChart>
 
-
-        return (
-            <div className='mt-24'>
-                {/* <text
-                    x={x}
-                    y={y}
-                    fill="white"
-                    textAnchor={x > cx ? "start" : "end"}
-                    dominantBaseline="central"
-                >
-                    {`${(percent * 100).toFixed(0)}%`}
-                </text> */}
-                <h2 className='gap-5'>
-                    Students Name: {studentMarks.name}
-                </h2>
-                <LineChart width={500} height={400} data={studentMarks}>
+            <div>
+                <LineChart width={600} height={300} data={studentMarks}>
                     <Line type="monotone" dataKey="math" stroke="red" />
                     <Line type="monotone" dataKey="science" stroke="black" />
                     <Line type="monotone" dataKey="history" stroke="blue" />
-                    <Line type="monotone" dataKey="english" stroke="aqa" />
+                    <Line type="monotone" dataKey="english" stroke="aqa" />                    <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
                 </LineChart>
-
-                <div>
-                    <LineChart width={600} height={300} data={studentMarks}>
-                        <Line type="monotone" dataKey="math" stroke="red" />
-                        <Line type="monotone" dataKey="science" stroke="black" />
-                        <Line type="monotone" dataKey="history" stroke="blue" />
-                        <Line type="monotone" dataKey="english" stroke="aqa" />                    <CartesianGrid stroke="#ccc" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                    </LineChart>
-                </div>
-                <div>
-                    <AreaChart
-                        width={500}
-                        height={400}
-                        data={studentMarks}
-                        margin={{
-                            top: 10,
-                            right: 30,
-                            left: 0,
-                            bottom: 0
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Area type="monotone" dataKey="math" stroke="orange" fill="green" />
-                    </AreaChart>
-                </div>
-                <div>
-                    <BarChart
-                        width={500}
-                        height={300}
-                        data={studentMarks}
-                        margin={{
-                            top: 20,
-                            right: 30,
-                            left: 20,
-                            bottom: 5
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey="math" stackId="name" fill="red" />
-                        <Bar dataKey="english" stackId="name" fill="black" />
-                        <Bar dataKey="history" stackId="name" fill="blue" />
-                        <Bar dataKey="science" stackId="name" fill="orange" />
-                    </BarChart>
-                </div>
-
-                <div>
-                    {/* <PieChart width={400} height={400}>
-                        <Pie
-                            data={data}
-                            cx={200}
-                            cy={200}
-                            labelLine={false}
-                            label={renderCustomizedLabel}
-                            outerRadius={80}
-                            fill="#8884d8"
-                            dataKey="value"
-                        >
-                            {data.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                            ))}
-                        </Pie>
-                    </PieChart> */}
-                </div>
-
             </div>
-        )
+            <div>
+                <AreaChart
+                    width={500}
+                    height={400}
+                    data={studentMarks}
+                    margin={{
+                        top: 10,
+                        right: 30,
+                        left: 0,
+                        bottom: 0
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Area type="monotone" dataKey="math" stroke="orange" fill="green" />
+                </AreaChart>
+            </div>
+            <div>
+                <BarChart
+                    width={500}
+                    height={300}
+                    data={studentMarks}
+                    margin={{
+                        top: 20,
+                        right: 30,
+                        left: 20,
+                        bottom: 5
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="math" stackId="name" fill="red" />
+                    <Bar dataKey="english" stackId="name" fill="black" />
+                    <Bar dataKey="history" stackId="name" fill="blue" />
+                    <Bar dataKey="science" stackId="name" fill="orange" />
+                </BarChart>
+            </div>
 
-    }
+        </div>
+    )
 
-    // StudentChart.propTypes = {
-    //     LineChart:PropTypes.array
-    // };
+}
 
-    export default StudentChart
+// StudentChart.propTypes = {
+//     LineChart:PropTypes.array
+// };
+
+export default StudentChart
