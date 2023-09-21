@@ -17,10 +17,7 @@ const StudentChart = () => {
 
     return (
 
-        <div className='mt-24'>
-            <h2 className='gap-5'>
-                Students Name: {studentMarks.name}
-            </h2>
+        <div className='mt-24 gap-10 grid md:grid-cols-2 justify-between'>
             <LineChart width={500} height={400} data={studentMarks}>
                 <Line type="monotone" dataKey="math" stroke="red" />
                 <Line type="monotone" dataKey="science" stroke="black" />
